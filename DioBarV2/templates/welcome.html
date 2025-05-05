@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Rebar Vista</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("{{ url_for('static', filename='images/bg.png') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .welcome-container {
+            position: relative;
+            max-width: 540px;
+            padding: 30px;
+            text-align: center;
+            background-color: #f5f5f5; /* Off-white color */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .welcome-logo {
+            max-width: 200px;
+            margin-bottom: 5px;
+        }
+        
+        .welcome-title {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .welcome-description {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            text-align: left;
+        }
+        
+        .how-to-use {
+            margin: 25px 0;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 4px solid #FF5722;
+            text-align: left;
+        }
+        
+        .how-to-use h2 {
+            color: #FF5722;
+            margin-top: 0;
+            font-size: 22px;
+        }
+        
+        .how-to-use ul {
+            padding-left: 25px;
+            margin-bottom: 5px;
+        }
+        
+        .how-to-use li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .how-to-use .tip {
+            font-style: italic;
+            font-size: 15px;
+            color: #555;
+            margin-top: 10px;
+        }
+        
+        .team-credit {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 30px;
+            font-style: italic;
+            font-weight: bold;
+        }
+        
+        .start-btn {
+            background-color: #FF5722;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 15px 40px;
+            cursor: pointer;
+            font-size: 20px;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .start-btn:hover {
+            background-color: #E64A19;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="welcome-logo">
+        <h1 class="welcome-title">Welcome to Rebar Vista</h1>
+        <p class="welcome-description">
+            This application allows you to view real-time camera feed from your Raspberry Pi 5,
+            measure distances using the ultrasonic sensor, capture images, and download them to your device.
+            The app works best in fullscreen mode for optimal viewing experience.
+        </p>
+        
+        <div class="how-to-use">
+            <h2>How to Use This Application</h2>
+            <ul>
+                <li><strong>Camera View:</strong> The main screen displays a live feed from the Pi 5 camera.</li>
+                <li><strong>Distance Reading:</strong> The current distance measured by the ultrasonic sensor is shown at the top of the screen.</li>
+                <li><strong>Capture Images:</strong> Click the "Capture Image" button to take a snapshot of the current view.</li>
+                <li><strong>Fullscreen Mode:</strong> For the best experience, click the fullscreen icon in the controls.</li>
+                <li><strong>Image Gallery:</strong> All captured images are stored in the gallery section at the bottom of the page.</li>
+                <li><strong>Add Descriptions:</strong> You can add notes or descriptions to your captured images for reference.</li>
+                <li><strong>Download:</strong> Each image can be downloaded individually using the download button.</li>
+            </ul>
+            <p class="tip"><strong>Tip:</strong> For optimal performance, keep the camera and sensor steady and ensure good lighting conditions.</p>
+        </div>
+        
+        <p class="team-credit">Team 10 Project design!</p>
+        <a href="{{ url_for('main_app') }}" class="start-btn">Start Application</a>
+    </div>
+</body>
+</html>
